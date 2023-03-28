@@ -1,0 +1,9 @@
+.ftr {
+    color: whitesmoke;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: red;
+  }

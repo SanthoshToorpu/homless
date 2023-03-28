@@ -5,11 +5,22 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useAuth0 } from "@auth0/auth0-react";
+
 import './header.css'
 const Header = () => {
+
+  const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
   return (
     <Container fluid>
-    <Navbar className='navbar navbar navbar-expand-md navbar-light width bg-primary fixed-top'>
+    <Navbar className='navbar navbar navbar-expand-md width navbar-dark bg-dark fixed-top'>
       <Navbar.Brand href="/">
             <img
               alt=""
@@ -29,7 +40,7 @@ const Header = () => {
           >
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/Healthcare">News</Nav.Link>
-            <Nav.Link href="/Shelters">Shelters</Nav.Link>
+            <Nav.Link href="/Shelters">Job Trainings</Nav.Link>
             
             <NavDropdown title="HOMELESSNESS" id="navbarScrollingDropdown">
               <NavDropdown.Item href="https://endhomelessness.org/homelessness-in-america/what-causes-homelessness/">What Causes Homelessnes ?</NavDropdown.Item>
@@ -45,14 +56,31 @@ const Header = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
+          {
+            isAuthenticated && (
+              <Navbar.Brand href="/">
+                      <img
+                        alt=""
+                        src={user.picture}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top rounded-circle"
+                      />{' '}
+                      {user.name}
+                    </Navbar.Brand>
+              
+            )
+          }
+          
+          <Form className="d-flex">                 
+            {isAuthenticated?(
+                 <Button className="btn btn-dark" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                 Log Out
+               </Button>
+            ):
+            <Button onClick={() => loginWithRedirect()}>Log In</Button>
+            }
+                       
           </Form>
         </Navbar.Collapse>
     </Navbar>
