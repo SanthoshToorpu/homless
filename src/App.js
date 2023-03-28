@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {Routes , Route,  Link} from "react-router-dom";
+import {Layout, Typography, Space} from 'antd';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Header, Homepage, News, Donatenow, Shelters } from './components';
+import Row from 'react-bootstrap/esm/Row';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+        <div className='navbar'>
+            <Header />
+        </div>
+        <div className='main'>
+            <Layout>
+                    <div className='routes'>
+                        <Routes>
+                        <Route path='/' element={<Homepage/>} />
+                        <Route path='/Healthcare' element={<News/>} />
+                        <Route path='/Donatenow' element={<Donatenow/>} />
+                        <Route path='/Shelters' element={<Shelters/>} />
+                        
+                        </Routes>
+                    </div>
+                </Layout>
+        </div>
+        <div className='footer'>
+          <h1 className='text-center text-decoration-underline m-5'>SIGN UP FOR EMAIL UPDATES</h1>
+          
+            <Row className="m-5">
+            <Form>
+        <Form.Control type="email" placeholder="Enter email" />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+      </Form>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Control type="password" placeholder="Password" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+        <Form.Check type="checkbox" label="Check me out" />
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+            </Row>
+            
+        {/* <Typography.Title level={5} style={{ color: 'black', textAlign: 'center' }}>Copyright © 2021 
+          <Link to="/">
+             Cryptoverse Inc.
+          </Link> <br />
+          All Rights Reserved.
+        </Typography.Title>
+        <Space>
+          <Link to="/">Home</Link>
+          <Link to="/exchanges">Exchanges</Link>
+          <Link to="/news">News</Link>
+        </Space> */}
+        </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
