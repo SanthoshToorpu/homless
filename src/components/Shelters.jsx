@@ -9,7 +9,7 @@ const Shelters = () => {
   const getJobs = () => {
     axios
       .get(
-        "http://api.adzuna.com:80/v1/api/jobs/gb/search/1?app_id=f71809d3&app_key=ace8016857316e568a56333762a1f268&results_per_page=20&what=javascript%20developer&what_exclude=java&where=london&sort_by=salary&salary_min=30000&full_time=1&permanent=1&content-type=application/json"
+        "https://api.adzuna.com/v1/api/jobs/in/search/1?app_id=f71809d3&app_key=ace8016857316e568a56333762a1f268&results_per_page=25&what=IT&what_and=Marketing"
       )
       .then((response) => {
         console.log(response);
@@ -28,10 +28,10 @@ const Shelters = () => {
         <div className="row">
           {data.map((value) => {
             return (
-              <div className="col">
+              
                 <a href={value.redirect_url}>
-                <Card>
-                  <Card.Header>Featured</Card.Header>
+                <Card className="width: 18rem text-center w-75 m-auto mb-3">
+                  <Card.Header>{value.category.label}</Card.Header>
                   <Card.Body>
                     <Card.Title>{value.title}</Card.Title>
                     <Card.Text className="text-dark">
@@ -48,7 +48,6 @@ const Shelters = () => {
                 </Card>
                   
                 </a>
-              </div>
             );
           })}
         </div>

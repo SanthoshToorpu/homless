@@ -47,7 +47,7 @@ const Footer = () => {
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
               <h6 className=" ftr text-uppercase fw-bold mb-4">
                 <MDBIcon icon="gem" className="me-3" />
-                Company name
+                Street2Shelter
               </h6>
               <p>
                 Street2Shelter does not provide direct services such as housing
