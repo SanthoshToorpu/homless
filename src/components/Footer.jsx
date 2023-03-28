@@ -70,7 +70,7 @@ const Footer = () => {
               </p>
               <p>
                 <a href="https://www.homelesspeople.in/" className="text-reset">
-                  https://www.homelesspeople.in/
+                  Homeless
                 </a>
               </p>
               <p>
@@ -78,7 +78,7 @@ const Footer = () => {
                   href="https://borgenproject.org/tag/homelessness-in-india/"
                   className="text-reset"
                 >
-                  borgenprojectborgenpojct
+                  borgenproject
                 </a>
               </p>
             </MDBCol>
