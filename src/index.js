@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import App from './App';
+
+import App from "./App";
 ReactDOM.render(
-    <Router>
-        <App />
-    </Router>
-    , document.getElementById('root')
-    )
+  <Router>
+    <App />
+  </Router>,
+  document.getElementById("root")
+);
