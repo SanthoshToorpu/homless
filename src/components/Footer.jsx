@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 import {
   MDBFooter,
   MDBContainer,
@@ -9,13 +10,16 @@ import {
 
 const Footer = () => {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
+    <MDBFooter
+      bgColor="light"
+      className="text-center ftr bg-dark ftr text-lg-start text-muted"
+    >
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <div className="me-5 d-none d-lg-block">
+        <div className=" ftr me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>
         </div>
 
-        <div>
+        <div className="ftr">
           <a href="" className="me-4 text-reset">
             <MDBIcon fab icon="facebook-f" />
           </a>
@@ -38,10 +42,10 @@ const Footer = () => {
       </section>
 
       <section className="">
-        <MDBContainer className="text-center text-md-start mt-5">
+        <MDBContainer className=" ftr text-center text-md-start mt-5">
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">
+              <h6 className=" ftr text-uppercase fw-bold mb-4">
                 <MDBIcon icon="gem" className="me-3" />
                 Company name
               </h6>
@@ -56,27 +60,41 @@ const Footer = () => {
             <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Products</h6>
               <p>
-                <a href="http://www.ihrn.org.in/" className="text-reset">
+                <a
+                  href="http://www.ihrn.org.in/"
+                  target="_blank"
+                  className="text-reset"
+                  rel="noreferrer"
+                >
                   IHRN
                 </a>
               </p>
               <p>
                 <a
                   href="https://www.hlrn.org.in/homelessness"
+                  target="_blank"
                   className="text-reset"
+                  rel="noreferrer"
                 >
                   HLRN
                 </a>
               </p>
               <p>
-                <a href="https://www.homelesspeople.in/" className="text-reset">
+                <a
+                  href="https://www.homelesspeople.in/"
+                  target="_blank"
+                  className="text-reset"
+                  rel="noreferrer"
+                >
                   Homeless
                 </a>
               </p>
               <p>
                 <a
                   href="https://borgenproject.org/tag/homelessness-in-india/"
+                  target="_blank"
                   className="text-reset"
+                  rel="noreferrer"
                 >
                   borgenproject
                 </a>
@@ -86,22 +104,22 @@ const Footer = () => {
             <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" target="_blank" className="text-reset">
                   Pricing
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" target="_blank" className="text-reset">
                   Settings
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" target="_blank" className="text-reset">
                   Orders
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="#!" target="_blank" className="text-reset">
                   Help
                 </a>
               </p>

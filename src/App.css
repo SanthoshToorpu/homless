@@ -1,0 +1,12 @@
+.mail {
+  display: flex;
+  margin: 1% 25%;
+}
+.button {
+ display: flex; 
+  margin: auto;
+}
+.button:hover {
+  text-align: center;
+  background-color: green;
+}
